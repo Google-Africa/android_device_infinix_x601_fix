@@ -9,7 +9,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/Infinix/X601/device_X601.mk)
 
-PRODUCT_NAME := cm_X601
+PRODUCT_NAME := lineage_X601
 PRODUCT_DEVICE := X601-LTE
 PRODUCT_BRAND := Infinix
 PRODUCT_MANUFACTURER := Infinix
