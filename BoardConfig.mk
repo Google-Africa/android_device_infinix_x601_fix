@@ -235,5 +235,4 @@ MTK_GPU_VERSION := mali midgard r12p1
 MTK_HWC_SUPPORT := yes
 MTK_HWC_VERSION := 1.4.1
     
-
-    
+BLOCK_BASED_OTA := false
