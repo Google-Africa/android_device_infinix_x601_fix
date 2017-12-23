@@ -45,6 +45,7 @@ MTK_PLATFORM := mt6753
 MTK_PROJECT := 6753
 
 TARGET_LDPRELOAD += mtk_symbols.so
+TARGET_LDPRELOAD += libmtk_symbols.so
 
 # Use custom init.rc
 TARGET_PROVIDES_INIT_RC := true
