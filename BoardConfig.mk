@@ -11,7 +11,7 @@ BOARD_GLOBAL_CPPFLAGS += $(MTK_INTERNAL_CDEFS)
 
 #USE_CCACHE:=1
 #CCACHE_DIR:=$(LOCAL_PATH)/../../.ccache
-USE_NINJA:=false
+USE_NINJA:=true
 #JACK_SERVER_VM_ARGUMENTS:="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx2560m"
 
 # Platform
@@ -50,21 +50,21 @@ TARGET_LDPRELOAD += mtk_symbols.so
 TARGET_PROVIDES_INIT_RC := true
 
 
-MTK_KERNEL_PREBUILD:=no
+MTK_KERNEL_PREBUILD:=yes
 
-ifneq ($(MTK_KERNEL_PREBUILD),yes)
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_CONFIG := k5fpr_defconfig
-TARGET_KERNEL_SOURCE := kernel/mtk/kernel-3.19
-else
+# ifneq ($(MTK_KERNEL_PREBUILD),yes)
+# BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+# TARGET_KERNEL_CONFIG := k5fpr_defconfig
+# TARGET_KERNEL_SOURCE := kernel/mtk/kernel-3.19
+# else
 # Hack for build
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
-ifneq ($(MTK_K64_SUPPORT),yes)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuild/kernel32
-else
+# ifneq ($(MTK_K64_SUPPORT),yes)
+# TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuild/kernel32
+# else
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuild/kernel
-endif
-endif
+# endif
+# endif
 
 ifneq ($(MTK_K64_SUPPORT),yes)
 ARCH := arm
